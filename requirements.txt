@@ -2,3 +2,4 @@ numpy
 numpy-stl
 matplotlib
 tqdm
+pandas
