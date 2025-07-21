@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='auxgen',
-    version='0.0.3',    
+    version='0.0.4',    
     description='Auxiliary functions for Generative design',
     url='https://github.com/juancc/auxgen',
     author='Juan Carlos Arbelaez',

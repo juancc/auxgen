@@ -13,13 +13,20 @@ import open3d as o3d
 import numpy as np
 import plotly.graph_objects as go
 
-def show_cq(cq_model):
+import tempfile
+import os
+
+
+def show(cq_model):
     """Show CadQuery model by saving it and loading again"""
-    temp_file = '/content/untitled.stl'
-    cq_model.export(temp_file)
+    # Create a temp file path (does not create the file yet)
+    temp_dir = tempfile.gettempdir()
+    file_name = "untitled-tmp.stl"
+    temp_file_path = os.path.join(temp_dir, file_name)
 
+    cq_model.export(temp_file_path)
 
-    mesh = o3d.io.read_triangle_mesh(temp_file)
+    mesh = o3d.io.read_triangle_mesh(temp_file_path)
 
 
     if not mesh.has_vertex_normals(): mesh.compute_vertex_normals()
