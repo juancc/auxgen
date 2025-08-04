@@ -42,7 +42,7 @@ def render_stl_to_image(stl_path, show=False, model_color='lightgrey', color_nor
         # colors = np.abs(coords/norms)
         colors = coords/norms
         colors = 0.5*colors + 0.5
-        mesh_poly = Poly3DCollection(model.vectors, alpha=1, facecolors=colors, shade=True,  lightsource=light)
+        mesh_poly = Poly3DCollection(model.vectors, alpha=0.6, facecolors=colors, shade=True,  lightsource=light)
     else:
         mesh_poly = Poly3DCollection(vectors, alpha=1, shade=True,  lightsource=light, facecolors=model_color)
 
@@ -83,7 +83,7 @@ def render_stl_to_image(stl_path, show=False, model_color='lightgrey', color_nor
         plt.close()
 
 
-def render_each(save_path, format='stl'):
+def render_each(save_path, format='stl',  model_color='lightcoral', color_normals=False ):
     """ Render each STL file in path"""
     print('Rendering STL models in folder...')
 
@@ -91,7 +91,7 @@ def render_each(save_path, format='stl'):
     for filename in tqdm(files, total=len(files)):
         if filename.endswith(f'.{format}'):
             model_file = os.path.join(save_path, filename)
-            render_stl_to_image(model_file, model_color='lightcoral')
+            render_stl_to_image(model_file, model_color=model_color, color_normals=color_normals)
 
 
 
