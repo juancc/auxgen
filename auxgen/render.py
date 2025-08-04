@@ -83,9 +83,10 @@ def render_stl_to_image(stl_path, show=False, model_color='lightgrey', color_nor
         plt.close()
 
 
-def render_each(save_path, format='stl',  model_color='lightcoral', color_normals=False ):
+def render_each(save_path,  model_color='lightcoral', color_normals=False ):
     """ Render each STL file in path"""
     print('Rendering STL models in folder...')
+    format='stl'
 
     files = os.listdir(save_path)
     for filename in tqdm(files, total=len(files)):
