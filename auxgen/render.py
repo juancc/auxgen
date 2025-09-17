@@ -139,4 +139,10 @@ def image_mosaic(folder_path, cols=4, image_ext='.png', figsize=(12, 12), show=F
     plt.savefig(savepath)
     if show: plt.show()
 
-# render_stl_to_image('/Users/jarbel16/Downloads/Bottles-v0/model-0.stl', show=True, model_color='lightgrey')
+
+
+if __name__ == '__main__':
+    # render_stl_to_image('/Users/jarbel16/Downloads/Bottles-v0/model-0.stl', show=True, model_color='lightgrey')
+    save_path = '/Users/jarbel16/Downloads/chair-stl'
+    # render_each(save_path)
+    image_mosaic(save_path)
